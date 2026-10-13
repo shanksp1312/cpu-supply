@@ -1,0 +1,157 @@
+<!doctype html>
+<!--
+  CPU SUPPLY Dashboard - the dark page for Safari (version 4.1)
+  Shows the dashboard inside this page, so Safari colours the strips above and below it to match the dashboard
+  instead of white. Put this file, named index.html, on any web host (the setup guide uses GitHub Pages) and open it
+  with the dashboard link after a # sign:  https://YOURNAME.github.io/cpu-supply/#https://script.google.com/macros/s/.../exec
+  Opened without the link, it asks for it and adds it to the address, so a bookmark or a Home Screen icon keeps it.
+  It shows Apps Script web app links only, holds no data and sends nothing anywhere; the link after # never reaches the
+  host. The dashboard needs version 4.1 or later to be shown inside this page.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#edf0f2">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0d1114">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="CPU SUPPLY">
+<meta name="referrer" content="strict-origin">
+<title>CPU SUPPLY Dashboard</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<style>
+/* The dashboard's own background colours, light and dark. Safari takes the colour of its top and bottom strips from
+   this page's background, so they match the dashboard. */
+:root{--bg:#edf0f2;--surface:#ffffff;--ink:#11171c;--ink-2:#434e58;--muted:#6a757f;--line:#cdd4da;--accent:#2a78d6;--on-accent:#ffffff;--warn:#b4541f}
+@media (prefers-color-scheme: dark){:root{--bg:#0d1114;--surface:#151a1e;--ink:#eef2f5;--ink-2:#b9c3cc;--muted:#8e98a1;--line:#323b43;--accent:#3987e5;--on-accent:#07111b;--warn:#ec835a}}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg)}
+body{overflow:hidden;color:var(--ink);font:16px/1.5 Aptos,"Open Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+[hidden]{display:none!important}
+#dash{display:block;width:100%;height:100%;border:0;background:var(--bg);visibility:hidden}
+#dash.on{visibility:visible}
+.screen{position:fixed;inset:0;overflow:auto;display:flex;align-items:center;justify-content:center;padding:24px 20px}
+.box{width:100%;max-width:420px}
+.wait{color:var(--muted);text-align:center;font-size:15px}
+.wait p{margin:10px 0 0}
+.wait .slow{color:var(--ink-2);font-size:14px;max-width:340px;margin:12px auto 0}
+.plate{display:inline-flex;align-items:center;text-transform:uppercase;background:#f3c515;color:#121212;border-radius:5px;
+  padding:5px 14px 6px;box-shadow:inset 0 0 0 2px #f3c515,inset 0 0 0 4px #121212;font-weight:800;font-size:15px;letter-spacing:.08em}
+h1{font-size:24px;line-height:1.2;margin:16px 0 6px}
+.ask p{color:var(--ink-2);margin:0 0 14px}
+label{display:block;font-weight:600;font-size:15px;margin-bottom:6px}
+.row{display:flex;gap:8px}
+input{flex:1;min-width:0;font:15px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+button{font:inherit;font-weight:700;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);border-radius:8px;padding:10px 16px;cursor:pointer}
+input:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.err{color:var(--warn);font-size:14px;min-height:1.5em;margin:8px 0 0}
+.note{color:var(--muted);font-size:13.5px;margin:12px 0 0}
+.fail{position:fixed;left:12px;right:12px;bottom:12px;max-width:520px;margin:0 auto;background:var(--surface);color:var(--ink);border:1px solid var(--line);
+  border-left:4px solid var(--warn);border-radius:10px;padding:12px 14px;font-size:14.5px;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.fail a{color:var(--accent)}
+</style>
+</head>
+<body>
+<iframe id="dash" title="CPU SUPPLY Dashboard" referrerpolicy="strict-origin"></iframe>
+
+<div class="screen wait" id="wait" hidden>
+  <div class="box">
+    <span class="plate">CPU SUPPLY</span>
+    <p>Opening the dashboard…</p>
+    <p class="slow" id="slow" hidden>Still opening. Check the connection. If the page stays empty, the dashboard is older than version 4.1, which is the first that can be shown here.</p>
+  </div>
+</div>
+
+<div class="fail" id="fail" role="alert" hidden><b>The dashboard didn't open here.</b> Check the connection and reload. If it still doesn't open, publish version 4.1 of the dashboard or later: earlier versions can't be shown inside this page. <a href="#change">Use another link</a></div>
+
+<div class="screen ask" id="ask" hidden>
+  <div class="box">
+    <span class="plate">CPU SUPPLY</span>
+    <h1>Open the dashboard</h1>
+    <p>Paste the dashboard link, the one that ends in <b>/exec</b>.</p>
+    <form id="form" novalidate>
+      <label for="link">Dashboard link</label>
+      <div class="row">
+        <input id="link" type="url" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="https://script.google.com/macros/s/…/exec">
+        <button type="submit">Open</button>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+    </form>
+    <p class="note">The link is added to this page's address after a # sign, so a bookmark or a Home Screen icon opens the dashboard directly. It is also kept on this device.</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var KEY = 'cpu-supply-dashboard-link';
+  var frame = document.getElementById('dash'), wait = document.getElementById('wait'), slow = document.getElementById('slow');
+  var ask = document.getElementById('ask'), form = document.getElementById('form'), box = document.getElementById('link'), err = document.getElementById('err');
+  var fail = document.getElementById('fail');
+  var timer = 0, checks = 0;
+
+  // An Apps Script web app link (https://script.google.com/macros/s/ID/exec, or /a/macros/DOMAIN/s/ID/exec), or the ID
+  // alone; anything else is refused, so this page can't be made to show another site.
+  function linkOf(text) {
+    var s = String(text || '').trim();
+    if (/%[0-9a-f]{2}/i.test(s)) { try { s = decodeURIComponent(s); } catch (e) { } }
+    if (/^[\w-]{20,}$/.test(s)) return 'https://script.google.com/macros/s/' + s + '/exec';
+    var m = /^https:\/\/script\.google\.com\/(macros|a\/macros\/[\w.-]+)\/s\/([\w-]{20,})\/exec\/?(?:\?[^#]*)?$/.exec(s);
+    return m ? 'https://script.google.com/' + m[1] + '/s/' + m[2] + '/exec' : '';
+  }
+  function saved() { try { return localStorage.getItem(KEY) || ''; } catch (e) { return ''; } }
+  function save(v) { try { if (v) localStorage.setItem(KEY, v); else localStorage.removeItem(KEY); } catch (e) { } }
+  function setHash(v) {
+    var url = location.pathname + location.search + (v ? '#' + v : '');
+    try { history.replaceState(null, '', url); } catch (e) { if (v) location.hash = v; }
+  }
+  // Google's page around the dashboard holds it in a frame of its own. A page the browser refused to show here (a
+  // dashboard older than 4.1) or couldn't load has none, so after a few looks the page says so.
+  function verify(tries, n) {
+    if (n !== checks) return;
+    var frames = -1;
+    try { frames = frame.contentWindow.length; } catch (e) { frames = -1; }
+    if (frames !== 0) { fail.hidden = true; return; }
+    if (tries > 0) { setTimeout(function () { verify(tries - 1, n); }, 2500); return; }
+    fail.hidden = false;
+  }
+  function show(link) {
+    ask.hidden = true;
+    if (frame.getAttribute('src') === link) return;
+    frame.classList.remove('on'); wait.hidden = false; slow.hidden = true; fail.hidden = true;
+    clearTimeout(timer); checks++;
+    timer = setTimeout(function () { slow.hidden = false; }, 15000);
+    frame.onload = function () {
+      var n = checks;
+      // a moment for the dashboard inside Google's page to draw itself before it is shown
+      setTimeout(function () { frame.classList.add('on'); wait.hidden = true; slow.hidden = true; clearTimeout(timer); verify(3, n); }, 400);
+    };
+    frame.src = link;
+  }
+  function askFor(message) {
+    clearTimeout(timer); checks++; frame.onload = null; frame.removeAttribute('src'); frame.classList.remove('on');
+    wait.hidden = true; fail.hidden = true; ask.hidden = false; err.textContent = message || '';
+  }
+  function start() {
+    var h = location.hash.replace(/^#/, '');
+    if (h === 'change') { save(''); setHash(''); askFor(''); return; }
+    var link = linkOf(h);
+    if (h && !link) { askFor('The address doesn’t end in a dashboard link. Paste the link that ends in /exec.'); return; }
+    if (!link) { link = linkOf(saved()); if (link) setHash(link); }
+    if (!link) { askFor(''); return; }
+    save(link); setHash(link); show(link);
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var link = linkOf(box.value);
+    if (!link) { err.textContent = 'That isn’t a dashboard link. It starts with https://script.google.com/ and ends in /exec.'; box.focus(); return; }
+    save(link); setHash(link); show(link);
+  });
+  window.addEventListener('hashchange', start);
+  start();
+})();
+</script>
+</body>
+</html>
